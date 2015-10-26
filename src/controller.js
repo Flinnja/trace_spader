@@ -1,28 +1,22 @@
 function setupEventListeners(){
+  var ref = new Firebase("https://trace-spader.firebaseio.com")
 
   $(".login").click(function(){
-    // var ref = new Firebase("https://trace-spader.firebaseio.com")
-    // ref.authWithOAuthPopup("google", function(error, authData) {
-    //   if (error) {
-    //     if (error.code === "TRANSPORT_UNAVAILABLE"){
-    //       ref.authWithOAuthRedirect("google", function(error){
-    //         if(error) console.log("Login Failed!", error)
-    //       })
-    //     }
-    //     else console.log("Login Failed!", error)
-    //   }
-    //   else if(authData){
-    //   console.log("Authenticated successfully with payload:", authData)
-    //   }
-    // })
-    var ref = new Firebase("https://trace-spader.firebaseio.com");
-    ref.authWithOAuthPopup("google", function(error, authData) {
-      if (error) {
-        console.log("Login Failed!", error);
-      } else {
-        console.log("Authenticated successfully with payload:", authData);
-      }
-    })
+    ref.authWithOAuthPopup("google", authHandler, {remember: 'sessiononly', scope:'email'})
   })
 
+  $(".logout").click(function(){
+    ref.unauth();
+    if(!authData){
+      $("login-confirm").text('You have logged out')
+    }
+  })
+}
+
+function authHandler(error, authData){
+  if(error) console.log("Login failed!", error)
+  else if(authData){
+    console.log("Authenticated successfully with payload: ", authData)
+    $(".login-confirm").text('You have logged in as '+authData.google.email)
+  }
 }
