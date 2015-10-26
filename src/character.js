@@ -3,7 +3,14 @@ var Character = (function(){
     this.callsign = callsign
     this.bucks = 5
     this.location = {planet: "rock", port: "station one"}
-    this.ship = "Shuttle"
+    this.ship = null
+  }
+
+  Character.prototype.setShip = function(ship){
+    if (this.ship != null){
+      throw new Error("ERROR: You tried to add a new ship but character "+this.name+"already has a ship named "+this.ship.name)
+    }
+    else this.ship = ship
   }
 
   return Character
