@@ -6,10 +6,9 @@ function setupEventListeners(){
   })
 
   $(".logout").click(function(){
+    console.log("logging out")
     ref.unauth();
-    if(!authData){
-      $("login-confirm").text('You have logged out')
-    }
+    $(".login-confirm").text('You have logged out')
   })
 }
 
