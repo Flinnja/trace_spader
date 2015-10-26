@@ -43,4 +43,4 @@ var Ship = (function(){
 
 })()
 
-module.exports = Ship
+// module.exports = Ship
