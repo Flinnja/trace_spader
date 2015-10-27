@@ -15,5 +15,6 @@ function checkUserExists(){
 }
 
 function createNewChar(){
-  console.log("nope")
+  console.log("making new char")
+
 }
