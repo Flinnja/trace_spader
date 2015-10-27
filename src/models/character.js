@@ -1,6 +1,7 @@
 var Character = (function(){
-  function Character(callsign){
-    this.callsign = callsign
+  function Character(userId){
+    this.userId = userId
+    this.callsign = 'new character'
     this.bucks = 5
     this.location = {planet: "rock", port: "station one"}
     this.ship = null
