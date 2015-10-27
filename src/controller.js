@@ -8,14 +8,25 @@ function setupEventListeners(){
   $(".logout").click(function(){
     console.log("logging out")
     ref.unauth();
-    $(".login-confirm").text('You have logged out')
+    userData = null
+    displayLoggedIn()
   })
 }
 
 function authHandler(error, authData){
   if(error) console.log("Login failed!", error)
   else if(authData){
+    userData = authData
     console.log("Authenticated successfully with payload: ", authData)
-    $(".login-confirm").text('You have logged in as '+authData.google.email)
+    displayLoggedIn()
+  }
+}
+
+function displayLoggedIn(){
+  if (userData){
+    $(".login-confirm").text('You have logged in as '+userData.google.email)
+  }
+  else{
+    $(".login-confirm").text('You are not logged in')
   }
 }
