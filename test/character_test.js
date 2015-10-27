@@ -1,14 +1,18 @@
 var chai = require('chai')
 var expect = chai.expect
 
-var Character = require('../src/character.js')
-var Ship = require('../src/ship.js')
+var Character = require('../src/models/character.js')
+var Ship = require('../src/models/ship.js')
 
 describe('Character', function(){
   before(function(){
-    this.testChar = new Character("Trace")
+    this.testChar = new Character("1234")
     this.testShip = new Ship("ZoomZoom","Shuttle")
     this.ship2 = new Ship("BroomBroom","Shuttle")
+  })
+
+  it('recieves and stores a user id', function(){
+    expect(this.testChar.userId).to.equal('1234')
   })
 
   it('has a callsign as a string', function(){

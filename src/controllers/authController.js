@@ -1,6 +1,4 @@
 function setupEventListeners(){
-  var ref = new Firebase("https://trace-spader.firebaseio.com")
-
   $(".login").click(function(){
     ref.authWithOAuthPopup("google", authHandler, {remember: 'sessiononly', scope:'email'})
   })

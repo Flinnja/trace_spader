@@ -5,13 +5,15 @@
 <link rel="stylesheet" href="css/style.css">
 <script src='https://code.jquery.com/jquery-2.1.4.js'></script>
 <script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
-<script src='src/character.js'></script>
-<script src='src/ship.js'></script>
-<script src='src/controller.js'></script>
+<script src='src/models/character.js'></script>
+<script src='src/models/ship.js'></script>
+<script src='src/controllers/gameController.js'></script>
+<script src='src/controllers/authController.js'></script>
 </head>
 <body>
   <script>
   userData = null
+  ref = new Firebase("https://trace-spader.firebaseio.com/")
   $(function(){
     setupEventListeners()
   })
@@ -27,5 +29,8 @@
       </ul>
     </nav>
   </header>
+
+  <div class='content'>
+  </div>
 </body>
 </html>
