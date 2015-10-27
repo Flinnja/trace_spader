@@ -17,5 +17,5 @@ var Character = (function(){
   return Character
 })()
 
-module.exports = Character
+// module.exports = Character
 
