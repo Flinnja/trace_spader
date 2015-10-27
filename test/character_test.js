@@ -1,8 +1,8 @@
 var chai = require('chai')
 var expect = chai.expect
 
-var Character = require('../src/character.js')
-var Ship = require('../src/ship.js')
+var Character = require('../src/models/character.js')
+var Ship = require('../src/models/ship.js')
 
 describe('Character', function(){
   before(function(){

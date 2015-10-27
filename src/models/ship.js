@@ -40,7 +40,6 @@ var Ship = (function(){
   }
 
   return Ship
-
 })()
 
-// module.exports = Ship
+module.exports = Ship

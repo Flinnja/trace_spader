@@ -1,7 +1,7 @@
 var chai = require('chai')
 var expect = chai.expect
 
-var Ship = require('../src/ship.js')
+var Ship = require('../src/models/ship.js')
 
 describe("Ship", function(){
   beforeEach(function(){
