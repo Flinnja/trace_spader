@@ -1,5 +1,6 @@
 var Character = (function(){
-  function Character(callsign){
+  function Character(user){
+    this.user = userData.google.id
     this.callsign = callsign
     this.bucks = 5
     this.location = {planet: "rock", port: "station one"}

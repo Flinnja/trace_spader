@@ -9,7 +9,12 @@ function setupEventListeners(){
     console.log("logging out")
     ref.unauth();
     userData = null
+  })
+
+  ref.onAuth(function(authData){
+    userData = authData
     displayLoggedIn()
+    //do login stuff
   })
 }
 
@@ -18,7 +23,6 @@ function authHandler(error, authData){
   else if(authData){
     userData = authData
     console.log("Authenticated successfully with payload: ", authData)
-    displayLoggedIn()
   }
 }
 
@@ -30,3 +34,6 @@ function displayLoggedIn(){
     $(".login-confirm").text('You are not logged in')
   }
 }
+
+//display welcome page
+//check for chara
