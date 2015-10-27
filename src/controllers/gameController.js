@@ -15,6 +15,24 @@ function checkUserExists(){
 }
 
 function createNewChar(){
+  openWindow($('.new-char'))
   console.log("making new char")
 
+}
+
+function openWindow(element){
+  element.css('visibility', 'visible')
+  element.animate({
+    height: "15%",
+    width: "20%"
+  }, 50, function(){})
+}
+
+function closeWindow(element){
+  element.animate({
+    height: "0px",
+    width: "0px"
+  }, 50, function(){
+    element.css('visibility', 'hidden')
+  })
 }

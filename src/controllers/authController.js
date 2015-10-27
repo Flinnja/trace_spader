@@ -4,7 +4,6 @@ function setupEventListeners(){
   })
 
   $(".logout").click(function(){
-    console.log("logging out")
     ref.unauth();
     userData = null
   })
