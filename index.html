@@ -13,9 +13,12 @@
 <body>
   <script>
   userData = null
+  currentChar = null
+  currentShip = null
   ref = new Firebase("https://trace-spader.firebaseio.com/")
   $(function(){
-    setupEventListeners()
+    setupAuthListeners()
+    setupGameListeners()
   })
   </script>
 
@@ -31,6 +34,11 @@
   </header>
 
   <div class='content'>
+    <div class='new-char'>
+      <h2>Create a new character</h1>
+      Callsign: <input class='callsign-input' type='text'><br>
+      <button class='create-char'>Create!</button>
+    </div>
   </div>
 </body>
 </html>
