@@ -2,31 +2,37 @@ function setupGameListeners(){
   $('.create-char').click(function(){
     currentChar.callsign = $('.callsign-input').val()
     closeWindow('.new-char')
+    setupGameScreen()
   })
 }
 
-function checkUserExists(){
-  charDb = new Firebase('https://trace-spader.firebaseio.com/characters')
-  console.log(userData.uid)
-  charDb.once('value', function(snapshot){
-    console.log('in here')
-    if (snapshot.hasChild(userData.uid)){
-      console.log("character exists")
-    }
-    else createNewChar()
-  })
-}
+// function checkUserExists(){
+//   charDb = new Firebase('https://trace-spader.firebaseio.com/characters')
+//   console.log(userData.uid)
+//   charDb.once('value', function(snapshot){
+//     console.log('in here')
+//     if (snapshot.hasChild(userData.uid)){
+//       console.log("character exists")
+//     }
+//     else createNewChar()
+//   })
+// }
 
 function createNewChar(){
-  openWindow($('.new-char'))
+  openWindow('.new-char','18%','16%')
   currentChar = new Character(userData.uid)
 }
 
-function openWindow(element){
+function setupGameScreen(){
+  openWindow('.char-screen','29%','85%')
+  openWindow('.map-screen',"69%","85%")
+}
+
+function openWindow(element, wide, tall){
   $(element).css('visibility', 'visible')
   $(element).animate({
-    height: "15%",
-    width: "20%"
+    height: tall,
+    width: wide
   }, 50, function(){})
 }
 

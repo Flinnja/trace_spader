@@ -3,7 +3,7 @@ var Character = (function(){
     this.userId = userId
     this.callsign = 'new character'
     this.bucks = 5
-    this.location = {planet: "rock", port: "station one"}
+    this.location = {planet: "Spaghetti", port: "Meatball"}
     this.ship = null
   }
 
