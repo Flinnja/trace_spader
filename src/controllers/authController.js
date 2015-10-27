@@ -1,18 +1,32 @@
-function setupEventListeners(){
+function setupAuthListeners(){
   $(".login").click(function(){
     ref.authWithOAuthPopup("google", authHandler, {remember: 'sessiononly', scope:'email'})
+    $('.login').hide()
+    $('.logout').show()
   })
 
   $(".logout").click(function(){
-    console.log("logging out")
     ref.unauth();
+    $('.logout').hide()
+    $('.login').show()
     userData = null
+    currentChar = null
   })
 
   ref.onAuth(function(authData){
     userData = authData
     displayLoggedIn()
-    //do login stuff
+    if(userData){
+      $('.login').hide()
+      $('.logout').show()
+    }
+    else if(!userData){
+      $('.logout').hide()
+      $('.login').show()
+    }
+    if(currentChar == null && userData != null){
+      createNewChar()
+    }
   })
 }
 

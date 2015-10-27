@@ -44,7 +44,8 @@ nav li{
   padding: 0 10px 10px 0;
 }
 
-nav button{
+/*******BUTTONS********/
+button{
   border-top: 1px solid #e26455;
   border-bottom: 1px solid #e26455;
   background: #e26455;
@@ -55,16 +56,54 @@ nav button{
   text-decoration: none;
   vertical-align: middle;
 }
-nav button:hover {
+button:hover{
   border-bottom-color: #b92821;
   background: #c64532;
   color: #ccc;
 }
 
+button:focus{
+  outline: 0 !important;
+  border-bottom-color: #b92821;
+  background: #c64532;
+  color: #ccc;
+}
+
+/********INPUTS*********/
+input:focus{
+  outline: 0 !important;
+  background-color: #f69478;
+  border: 1px solid #e26455;
+}
 
 /************
     BODY
 *************/
 body{
   background-color: black;
+}
+
+/******CREATE CHAR SCREEN*********/
+.new-char{
+  visibility: hidden;
+  width: 0px;
+  height: 0px;
+  background-color: #17a67d;
+
+  border-top: 10px solid #087153;
+  border-bottom: 10px solid #087153;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 20px;
+
+  padding: 10px;
+
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  margin: auto;
 }

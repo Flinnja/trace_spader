@@ -1,5 +1,8 @@
-function setupEventListeners(){
-
+function setupGameListeners(){
+  $('.create-char').click(function(){
+    currentChar.callsign = $('.callsign-input').val()
+    closeWindow('.new-char')
+  })
 }
 
 function checkUserExists(){
@@ -15,5 +18,23 @@ function checkUserExists(){
 }
 
 function createNewChar(){
-  console.log("nope")
+  openWindow($('.new-char'))
+  currentChar = new Character(userData.uid)
+}
+
+function openWindow(element){
+  $(element).css('visibility', 'visible')
+  $(element).animate({
+    height: "15%",
+    width: "20%"
+  }, 50, function(){})
+}
+
+function closeWindow(element){
+  $(element).animate({
+    height: "0px",
+    width: "0px"
+  }, 50, function(){
+    $(element).css('visibility', 'hidden')
+  })
 }
