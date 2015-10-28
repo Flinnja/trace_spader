@@ -14,7 +14,6 @@
   <script>
   userData = null
   currentChar = null
-  currentShip = null
   ref = new Firebase("https://trace-spader.firebaseio.com/")
   $(function(){
     setupAuthListeners()
@@ -36,8 +35,34 @@
   <div class='content'>
     <div class='new-char'>
       <h2>Create a new character</h1>
-      Callsign: <input class='callsign-input' type='text'><br>
+      <input class='callsign-input' type='text' value='Character Name'><br>
+      <input class='shipName-input' type='text' value='Ship Name'><br>
       <button class='create-char'>Create!</button>
+    </div>
+    <div class='char-screen'>
+      <h2>Character Stats</h2>
+      <ul>
+        <li class='char-callsign'>Callsign:</li>
+        <li class='char-bucks'>SpaceBucks:</li>
+        <li class='char-planet'>Current Planet:</li>
+        <li class='char-port'>At Port:</li>
+      </ul>
+      <h2>Ship Stats</h2>
+      <ul>
+        <li class='ship-name'>Name:</li>
+        <li class='ship-model'>Model:</li>
+        <li class='ship-fuel'>Fuel:</li>
+        <li class='ship-cargo'>Cargo:</li>
+      </ul>
+      <h2>Cargo</h2>
+      <ul>
+        <li>Cargo</li>
+        <li>That</li>
+        <li>Goes</li>
+        <li>Here</li>
+      </ul>
+    </div>
+    <div class='map-screen'>
     </div>
   </div>
 </body>

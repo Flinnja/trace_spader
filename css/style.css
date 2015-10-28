@@ -14,7 +14,7 @@ header{
   margin: 0 0 30px 0;
   padding: 5px 0 0 0;
   width: 100%;
-  min-height: 50px;
+  min-height: 10%;
   clear: both;
   border-bottom: 6px solid #030c63;
   border-bottom-right-radius: 15px;
@@ -83,6 +83,16 @@ body{
   background-color: black;
 }
 
+/************
+    CONTENT
+**************/
+.content{
+  clear: both;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
 /******CREATE CHAR SCREEN*********/
 .new-char{
   visibility: hidden;
@@ -106,4 +116,56 @@ body{
   right: 0;
 
   margin: auto;
+}
+
+/********GAME SCREENS**********/
+.map-screen{
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  background-color: black;
+
+  border-top: 10px solid #444;
+  border-bottom: 10px solid #444;
+  border-right: 2px solid #ccc;
+  border-left: 2px solid #ccc;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 20px;
+
+  position: absolute;
+  right: 5px;
+  margin: auto;
+}
+
+.char-screen{
+  color: #67ffad;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  background-color: #087153;
+
+  border-top: 10px solid #17a67d;
+  border-bottom: 10px solid #17a67d;
+  border-right: 2px solid #ccc;
+  border-left: 2px solid #ccc;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 20px;
+
+  position: absolute;
+  left: 5px;
+  margin: auto;
+}
+
+.char-screen h2{
+  margin: 10px;
+}
+
+.char-screen ul{
+  color: white;
+  list-style: none;
+  margin: 10px 10px 30px 10px;
 }
