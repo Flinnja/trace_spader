@@ -15,7 +15,7 @@ var Ship = (function(){
   }
 
   Ship.prototype.addCargo = function(item, amount){
-    if (this.totalCargo() + amount >= this.maxCargo){
+    if (this.totalCargo() + amount > this.maxCargo){
       throw new Error("ERROR: Tried to add " + amount + "to cargo but cargo is already at " + this.totalCargo() + "and cannot increase beyond " + this.maxCargo)
     }
     else {
