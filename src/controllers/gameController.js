@@ -27,8 +27,13 @@ function createNewChar(){
 function setupGameScreen(){
   openWindow('.char-screen','29%','85%')
   openWindow('.map-screen',"69%","85%")
+  refreshDisplayStats()
+}
+
+function refreshDisplayStats(){
   displayCharStats()
   displayShipStats()
+  displayCargo()
 }
 
 function displayCharStats(){
@@ -45,12 +50,21 @@ function displayShipStats(){
   $('.ship-cargo').text("Cargo: "+currentChar.ship.totalCargo()+"/"+currentChar.ship.maxCargo)
 }
 
+function displayCargo(){
+  var manifest = ''
+  for(var key in currentChar.ship.cargo){
+    manifest += key.toString()+': '
+    manifest += currentChar.ship.cargo[key] + '<br>'
+  }
+  $('.cargo-manifest').html(manifest)
+}
+
 function openWindow(element, wide, tall){
   $(element).css('visibility', 'visible')
   $(element).animate({
     height: tall,
     width: wide
-  }, 50, function(){})
+  }, 100, function(){})
 }
 
 function closeWindow(element){
